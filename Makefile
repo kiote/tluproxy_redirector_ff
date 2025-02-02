@@ -6,4 +6,4 @@ help:
 	@echo "  extension   Bundle the extension into a zip file"
 
 extension:
-	zip -r ../my-sciencedirect-redirect.zip .
+	zip -r ../my-sciencedirect-redirect.zip . -x .git/\*

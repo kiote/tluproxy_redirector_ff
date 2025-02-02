@@ -1,3 +1,9 @@
+const urls = [
+    "*://www.sciencedirect.com/*",
+    "*://ieeexplore.ieee.org/*",
+    "*://link.springer.com/*",
+  ];
+
 browser.webRequest.onBeforeRequest.addListener(
     function (requestDetails) {
       try {
@@ -15,6 +21,10 @@ browser.webRequest.onBeforeRequest.addListener(
                 domain: "ieeexplore.ieee.org",
                 newHost: "ieeexplore-ieee-org.ezproxy.tlu.ee",
             },
+            {
+                domain: "link.springer.com",
+                newHost: "link-springer-com.ezproxy.tlu.ee",
+            }
         ];
 
         // Apply domain rule transforms
@@ -34,7 +44,7 @@ browser.webRequest.onBeforeRequest.addListener(
       return {};
     },
     // Filter for sciencedirect and ieeexplore
-    { urls: ["*://www.sciencedirect.com/*", "*://ieeexplore.ieee.org/*"] },
+    { urls: urls },
     // Make sure we can block (redirect) the request
     ["blocking"]
   );

@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
-    "name": "ScienceDirect to EZproxy Redirect",
-    "version": "1.0",
-    "description": "Automatically redirect www.sciencedirect.com links to www-sciencedirect-com.ezproxy.tlu.ee",
+    "name": "TLU EZproxy Redirect",
+    "version": "1.1",
+    "description": "Automatically redirect journal links to *.ezproxy.tlu.ee",
     
     "applications": {
       "gecko": {
-        "id": "sciencedirect-redirect@example.com"
+        "id": "tlu-redirects@example.com"
       }
     },
   
@@ -14,7 +14,9 @@
       "webRequest",
       "webRequestBlocking",
       "*://www.sciencedirect.com/*",
-      "*://ieeexplore.ieee.org/*"
+      "*://ieeexplore.ieee.org/*",
+      "*://acm.org/*",
+      "*://link.springer.com/*"
     ],
   
     "background": {
