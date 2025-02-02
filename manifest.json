@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "ScienceDirect to EZproxy Redirect",
+    "version": "1.0",
+    "description": "Automatically redirect www.sciencedirect.com links to www-sciencedirect-com.ezproxy.tlu.ee",
+    
+    "applications": {
+      "gecko": {
+        "id": "sciencedirect-redirect@example.com"
+      }
+    },
+  
+    "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "*://www.sciencedirect.com/*",
+      "*://ieeexplore.ieee.org/*"
+    ],
+  
+    "background": {
+      "scripts": ["background.js"]
+    }
+  }
+  
